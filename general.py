@@ -29,6 +29,7 @@ bankroll = int(input("What is your starting balance (in whole $$): "))
 
 def spins():
     global slots
+    global result
     slots = {'00': 'green', '0': 'green', '1': 'red', '2': 'black',
              '3': 'red', '4': 'black', '5': 'red', '6': 'black', '7': 'red',
              '8': 'black', '9': 'red', '10': 'black', '11': 'red',
@@ -224,9 +225,9 @@ while (keep_playing.lower() == 'yes') or (keep_playing.lower() == 'y'):
                          "10 = Combination of Four Numbers\n"
                          "11 = Combination of Six Numbers\n"
                          "12 = Combination of 1-2-3-0-00\n"
-                         "13 = One Number (Straight Up)"))
+                         "13 = One Number (Straight Up)\n"))
     (prmpt, balance) = adjusted_bankroll(spins(), bankroll, bet_value(bet_type))
-    print("\nThe winning number is: %s!" % spins())
+    print("\nThe winning number is: %s!" % result)
     print(prmpt)
     bankroll = balance
     keep_playing = input("Would you like to keep playing? (Y/N): ")
